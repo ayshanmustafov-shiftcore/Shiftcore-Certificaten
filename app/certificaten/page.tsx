@@ -1,0 +1,3 @@
+import Link from 'next/link'; import { certificates } from '../../lib/data';
+export default function CertsPage(){return <div className="page-wrap"><span className="kicker">KENNISBANK</span><h1>Alle certificaten</h1><p className="lead">Praktische uitleg over de meest voorkomende certificaten en instructies in de infra.</p><div className="cert-grid">{certificates.map(c=><Link href={`/certificaten/${c.slug}`} key={c.slug}><span className="eyebrow">{c.category}</span><h2>{c.name}</h2><p>{c.summary}</p><div><small>Geldigheid</small><b>{c.validity}</b></div><strong>Lees uitleg �?'</strong></Link>)}</div></div>}
+

@@ -13,5 +13,5 @@ Open daarna `http://localhost:3000`.
 
 ## Inhoudelijke status
 
-De huidige inhoud is voorbeelddata voor de MVP. Certificeringseisen zijn indicatief en moeten vÃ³Ã³r productie inhoudelijk worden gevalideerd met actuele, primaire bronnen.
+De huidige inhoud is voorbeelddata voor de MVP. Certificeringseisen zijn indicatief en moeten vóór productie inhoudelijk worden gevalideerd met actuele, primaire bronnen.
 
