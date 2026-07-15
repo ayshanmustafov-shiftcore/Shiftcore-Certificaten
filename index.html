@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shiftcore Certificatenwijzer voor functies en sectoren in de Nederlandse infra." />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Shiftcore Certificatenwijzer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Shiftcore Certificatenwijzer">
+        <span class="brand-mark">S</span>
+        <span class="brand-copy"><strong>Shiftcore</strong><small>Certificatenwijzer</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Hoofdnavigatie">
+        <button class="nav-link active" data-view="roles">Functies</button>
+        <button class="nav-link" data-view="certificates">Certificaten</button>
+        <button class="nav-link" data-view="about">Over de tool</button>
+      </nav>
+      <button id="mobileMenuButton" class="mobile-menu-button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+    <div id="mobileNav" class="mobile-nav container" hidden>
+      <button class="nav-link active" data-view="roles">Functies</button>
+      <button class="nav-link" data-view="certificates">Certificaten</button>
+      <button class="nav-link" data-view="about">Over de tool</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Infra & techniek</span>
+          <h1>Vind de juiste certificaten per functie en sector.</h1>
+          <p>Een praktisch overzicht voor opdrachtgevers, recruiters en vakmensen. Filter op sector, functie en verplichtingsniveau.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" data-scroll-to="tool">Bekijk functies</button>
+            <button class="button button-secondary" data-view="certificates">Bekijk certificaten</button>
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="hero-stat"><strong id="roleCount">0</strong><span>functies</span></div>
+          <div class="hero-stat"><strong id="certificateCount">0</strong><span>certificaten</span></div>
+          <div class="hero-stat"><strong id="sectorCount">0</strong><span>sectoren</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tool" class="tool-section">
+      <div class="container">
+        <div id="rolesView" class="app-view">
+          <div class="section-heading">
+            <div><span class="eyebrow">Functiewijzer</span><h2>Certificaten per functie</h2></div>
+            <p id="resultsSummary" class="results-summary"></p>
+          </div>
+
+          <div class="filter-panel">
+            <label class="search-field">
+              <span>Zoeken</span>
+              <input id="roleSearch" type="search" placeholder="Zoek op functie of certificaat..." autocomplete="off" />
+            </label>
+            <label>
+              <span>Sector</span>
+              <select id="sectorFilter"></select>
+            </label>
+            <label>
+              <span>Niveau</span>
+              <select id="requirementFilter">
+                <option value="all">Alle niveaus</option>
+                <option value="required">Verplicht</option>
+                <option value="recommended">Aanbevolen</option>
+                <option value="project">Projectafhankelijk</option>
+              </select>
+            </label>
+            <button id="resetFilters" class="button button-ghost">Filters wissen</button>
+          </div>
+
+          <div id="roleGrid" class="card-grid"></div>
+          <div id="emptyRoles" class="empty-state" hidden>
+            <h3>Geen functies gevonden</h3>
+            <p>Pas de zoekterm of filters aan.</p>
+          </div>
+        </div>
+
+        <div id="certificatesView" class="app-view" hidden>
+          <div class="section-heading">
+            <div><span class="eyebrow">Kennisbank</span><h2>Uitleg per certificaat</h2></div>
+            <p class="results-summary">Klik op een certificaat voor details.</p>
+          </div>
+          <div class="filter-panel compact">
+            <label class="search-field">
+              <span>Zoeken</span>
+              <input id="certificateSearch" type="search" placeholder="Bijvoorbeeld VCA, BEI of VIAG..." autocomplete="off" />
+            </label>
+            <label>
+              <span>Categorie</span>
+              <select id="categoryFilter"></select>
+            </label>
+            <button id="resetCertificateFilters" class="button button-ghost">Filters wissen</button>
+          </div>
+          <div id="certificateGrid" class="certificate-grid"></div>
+          <div id="emptyCertificates" class="empty-state" hidden>
+            <h3>Geen certificaten gevonden</h3>
+            <p>Pas de zoekterm of categorie aan.</p>
+          </div>
+        </div>
+
+        <div id="aboutView" class="app-view" hidden>
+          <div class="about-layout">
+            <div>
+              <span class="eyebrow">Over de tool</span>
+              <h2>Praktische ondersteuning, geen juridisch eindadvies.</h2>
+              <p>De Shiftcore Certificatenwijzer helpt bij de eerste selectie van mogelijke eisen per functie. De definitieve eisen hangen af van de feitelijke werkzaamheden, opdrachtgever, netbeheerder, aanwijzing, projectrisico's en actuele regelgeving.</p>
+              <p>Controleer daarom altijd de projectspecifieke eisen en de geldigheid van documenten vóór plaatsing of inzet.</p>
+            </div>
+            <div class="info-card">
+              <h3>Wat deze versie bevat</h3>
+              <ul>
+                <li>Filters per sector en verplichtingsniveau</li>
+                <li>Uitleg per certificaat</li>
+                <li>Mobiele en desktopweergave</li>
+                <li>Deelbare structuur voor verdere uitbreiding</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="disclaimer-section">
+      <div class="container disclaimer">
+        <strong>Belangrijk:</strong>
+        <span>De getoonde certificeringseisen zijn indicatief. Controleer altijd de actuele eisen van opdrachtgever, netbeheerder, project en functie.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Shiftcore B.V.</strong><span>Staffing Solutions</span></div>
+      <span>© <span id="currentYear"></span> Shiftcore B.V.</span>
+    </div>
+  </footer>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <div class="dialog-header">
+      <div><span id="dialogCategory" class="eyebrow"></span><h2 id="dialogTitle"></h2></div>
+      <button id="closeDialog" class="icon-button" aria-label="Sluiten">×</button>
+    </div>
+    <div id="dialogBody" class="dialog-body"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
